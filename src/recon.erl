@@ -318,7 +318,7 @@ bin_leak(N) ->
             _:_ -> {Pid, 0, []}
         end || Pid <- processes()
     ], N),
-    [{Pid, -Val, Id} ||{Pid, Val, Id} <-Procs].
+    [{Pid, -Val, Id} || {Pid, Val, Id} <- Procs].
 
 %% @doc Shorthand for `node_stats(N, Interval, fun(X,_) -> io:format("~p~n",[X]) end, nostate)'.
 -spec node_stats_print(Repeat, Interval) -> term() when
